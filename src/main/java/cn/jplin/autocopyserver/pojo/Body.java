@@ -3,6 +3,6 @@ package cn.jplin.autocopyserver.pojo;
 import lombok.Data;
 
 @Data
-public class Board {
+public class Body {
     String string;
 }

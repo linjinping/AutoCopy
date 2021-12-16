@@ -1,7 +1,6 @@
 package cn.jplin.autocopyserver;
 
-import cn.jplin.autocopyserver.pojo.Board;
-import cn.jplin.autocopyserver.utils.FixLinkedList;
+import cn.jplin.autocopyserver.pojo.Body;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,7 @@ public class Controller {
     }
 
     @PostMapping("/board")
-    public String setBoard(@RequestBody Board body){
+    public String setBoard(@RequestBody Body body){
         time = LocalDateTime.now();
         this.board = body.getString();
         logger.info("string: " + board);
