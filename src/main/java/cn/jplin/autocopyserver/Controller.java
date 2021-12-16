@@ -15,7 +15,7 @@ public class Controller {
     private String board = "null...";
     @GetMapping("/time")
     public String changeTime(){
-        return time.toString().replaceAll("T", " ");
+        return time.toString();
     }
 
     @PostMapping("/board")
