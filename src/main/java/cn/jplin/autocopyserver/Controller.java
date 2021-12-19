@@ -1,16 +1,15 @@
 package cn.jplin.autocopyserver;
 
 import cn.jplin.autocopyserver.pojo.Body;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
 @RestController
+@Slf4j
 @RequestMapping(path = "/", produces = "application/json; charset=utf-8")
 public class Controller {
-    Logger logger = LoggerFactory.getLogger(Controller.class);
     private LocalDateTime time = LocalDateTime.now();
     private String board = "null...";
     @GetMapping("/time")
@@ -22,7 +21,7 @@ public class Controller {
     public String setBoard(@RequestBody Body body){
         time = LocalDateTime.now();
         this.board = body.getString();
-        logger.info("string: " + board);
+        log.info("Board content: " + board);
         return changeTime();
     }
 
