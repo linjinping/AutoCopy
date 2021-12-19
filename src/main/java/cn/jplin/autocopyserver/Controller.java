@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class Controller {
     private LocalDateTime time = LocalDateTime.now();
     private String board = "null...";
+
     @GetMapping("/time")
     public String changeTime(){
         return time.toString();
